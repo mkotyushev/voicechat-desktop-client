@@ -1,0 +1,37 @@
+{
+  "backend": "voicechat",
+  "url": "ws://127.0.0.1:9070/v1/realtime",
+  "mode": "live",
+  "instructions": "You can open apps and web pages, list running apps, read the clipboard, and press keys on this Windows PC using the available tools. Use them when asked, but do not read the output. Answer EXCLUSIVELY in English, no matter what the input language was.",
+  "speak": true,
+  "max_new_tokens": 512,
+  "length_penalty": 1.1,
+  "ref_audio": "ref_voice.wav",
+  "context_size": 8192,
+  "mic_duck_while_speaking": 1.0,
+  "playback_buffer_ms": 1000,
+  "duplex": {
+    "listen_prob_scale": 0.5,
+    "force_listen_count": 3,
+    "max_new_speak_tokens_per_chunk": 20
+  },
+  "input_device": null,
+  "output_device": null,
+  "tools": {
+    "enabled": true,
+    "driver": null,
+    "allow": {
+      "list_apps": null,
+      "launch_app": [
+        "name",
+        "urls"
+      ],
+      "clipboard_read": null,
+      "press_key": [
+        "key"
+      ]
+    },
+    "timeout_s": 20,
+    "max_result_chars": 300
+  }
+}
